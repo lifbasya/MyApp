@@ -3,9 +3,11 @@ import Latihan1 from "@/components/latihan/Latihan1";
 import Latihan2 from "@/components/latihan/Latihan2";
 import Latihan3 from "@/components/latihan/Latihan3";
 import Latihan4 from "@/components/latihan/Latihan4";
+import AddScreen from "@/components/tugas/addScreen";
 import DetailScreen from "@/components/tugas/detailScreen";
 import HomeScreen from "@/components/tugas/HomeScreen";
 import LoginScreen from "@/components/tugas/LoginScreen";
+import UpdateScreen from "@/components/tugas/updateScreen";
 
 
 export default function Index() {
@@ -17,7 +19,9 @@ export default function Index() {
     {/* <Latihan3 /> */}
     {/* <Latihan4 /> */}
     {/* <HomeScreen /> */}
-    <DetailScreen />
+    {/* <DetailScreen /> */}
+    {/* <AddScreen /> */}
+    <UpdateScreen />
     </>
   );
 }
