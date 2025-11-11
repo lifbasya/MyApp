@@ -1,6 +1,6 @@
 import { notes } from "@/data/notesdata";
 import { Ionicons } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
+import { router, useRouter } from "expo-router";
 import {
   FlatList,
   Image,
@@ -22,7 +22,7 @@ type Note = {
 
 const NoteItem = ({ item }: { item: Note }) => {
   return (
-    <View style={styles.card}>
+    <TouchableOpacity style={styles.card} onPress={() => router.push(`/detail/${item.id}`)}>
       <Image source={item.image} style={{ width: 85, height: 85 }} />
       <View style={styles.cardContainer}>
         <View
@@ -45,7 +45,7 @@ const NoteItem = ({ item }: { item: Note }) => {
           <Text style={styles.cardDate}>{item.date}</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
