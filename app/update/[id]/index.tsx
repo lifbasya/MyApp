@@ -25,7 +25,7 @@ export default function UpdateScreen() {
   const router = useRouter();
   const { id } = useLocalSearchParams();
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [description, setDescription] = useState("");
   const note = notes.find((n) => n.id === Number(id));
 
   const [selectedImage, setSelectedImage] = useState<number>(0);
@@ -33,8 +33,11 @@ export default function UpdateScreen() {
   useEffect(() => {
     if (note) {
         setTitle(note.title);
-        setContent(note.description);
+        setDescription(note.description);
     }
+
+    const imageIndex = images.findIndex((img) => img === note?.image);
+    setSelectedImage(imageIndex);
   }, [note]);
 
   return (
@@ -65,7 +68,7 @@ export default function UpdateScreen() {
             selectionColor="#FF5B13"
             textAlignVertical="top"
             multiline={true}
-            value={content}
+            value={description}
           />
           <ScrollView
             horizontal={true}
